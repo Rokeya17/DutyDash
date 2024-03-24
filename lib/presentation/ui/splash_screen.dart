@@ -1,3 +1,4 @@
+import 'package:dutydash/presentation/ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -6,6 +7,20 @@ class SplashScreen extends StatefulWidget {
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
+}
+
+@override
+void initState() {
+  super.initState();
+  navigateToLogin();
+}
+
+void navigateTologin() {
+  Future.delayed(Duration(seconds: 03).then)
+  Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      (route) => false);
 }
 
 class _SplashScreenState extends State<SplashScreen> {
