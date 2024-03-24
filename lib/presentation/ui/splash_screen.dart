@@ -9,21 +9,23 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-@override
-void initState() {
-  super.initState();
-  navigateToLogin();
-}
-
-void navigateTologin() {
-  Future.delayed(Duration(seconds: 03).then)
-  Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (context) => const LoginScreen()),
-      (route) => false);
-}
-
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    navigateToLogin();
+  }
+
+  void navigateToLogin() {
+    Future.delayed(const Duration(seconds: 3)).then((_) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,22 +41,26 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Center(
-              child: SvgPicture.asset(
-                'assets/images/logo.svg',
-                height: 200,
-                fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/images/logo.svg',
+                    height: 200,
+                    fit: BoxFit.scaleDown,
+                  ),
+                  const SizedBox(height: 200),
+                  const CircularProgressIndicator(
+                    color: Colors.black,
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Version 1.0',
+                    style: TextStyle(fontSize: 10),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const CircularProgressIndicator(
-              color: Colors.black,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text('Version 1.0')
           ],
         ),
       ),
