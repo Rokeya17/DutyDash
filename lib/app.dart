@@ -1,4 +1,4 @@
-import 'package:dutydash/ui/splash_screen.dart';
+import 'package:dutydash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class DutyDash extends StatelessWidget {

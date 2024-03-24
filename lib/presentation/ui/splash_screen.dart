@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -27,9 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
               child: SvgPicture.asset(
                 'assets/images/logo.svg',
                 height: 200,
+                fit: BoxFit.scaleDown,
               ),
             ),
-            const Spacer(),
+            const SizedBox(
+              height: 20,
+            ),
             const CircularProgressIndicator(
               color: Colors.black,
             ),
