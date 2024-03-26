@@ -1,6 +1,6 @@
 # dutydash
 
-A new Flutter project.
+Dutydash is a Flutter application that offers task tracking features to users via a REST API. The software has a clear and user-friendly interface for handling task states like new progress, canceled, and completed. Users can also establish an account, log in, change their profile, and retrieve a forgotten password using email and OTP verification.
 
 ## Getting Started
 
