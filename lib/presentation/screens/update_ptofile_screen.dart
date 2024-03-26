@@ -92,30 +92,6 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               const SizedBox(
                 height: 16,
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    label: const Text(
-                      'email',
-                      style: TextStyle(fontSize: 16),
-                    )),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    label: const Text(
-                      'email',
-                      style: TextStyle(fontSize: 16),
-                    )),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
