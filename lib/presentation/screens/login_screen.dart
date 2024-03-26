@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/ui/create_accountscreen.dart';
+import 'package:dutydash/presentation/screens/create_accountscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(color: Colors.blue),
                 ),
-                labelText: 'Password', // Use labelText instead of label
+                labelText: 'Password',
               ),
             ),
             const SizedBox(
