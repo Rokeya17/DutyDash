@@ -50,13 +50,15 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 8,
             ),
             TextFormField(
+              obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: const BorderSide(color: Colors.blue),
-                ),
-                labelText: 'Password',
-              ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: const BorderSide(color: Colors.blue),
+                  ),
+                  labelText: 'Password',
+                  suffixIcon: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.hide_source))),
             ),
             const SizedBox(
               height: 16,
