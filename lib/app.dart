@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/screens/splash_screen.dart';
+import 'package:dutydash/presentation/screens/create_accountscreen.dart';
 import 'package:flutter/material.dart';
 
 class DutyDash extends StatelessWidget {
@@ -11,7 +11,7 @@ class DutyDash extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.light,
-      home: const SplashScreen(),
+      home: const CreateAccountScreen(),
     );
   }
 }

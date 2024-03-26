@@ -82,7 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Text("Don't have an account?"),
                 TextButton(
                   onPressed: () {
-                    Get.to(const CreateAccountScreen());
+                    setState(() {
+                      Get.to(const CreateAccountScreen());
+                    });
                   },
                   child: const Text('SignUp'),
                 ),
