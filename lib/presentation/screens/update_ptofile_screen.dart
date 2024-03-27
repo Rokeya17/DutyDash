@@ -34,6 +34,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 height: 16,
               ),
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -46,6 +47,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 height: 16,
               ),
               TextFormField(
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -58,6 +60,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 height: 16,
               ),
               TextFormField(
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -70,6 +73,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 height: 16,
               ),
               TextFormField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -82,6 +86,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 height: 16,
               ),
               TextFormField(
+                keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10)),

@@ -29,40 +29,41 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
-              child: SvgPicture.asset(
-                'assets/images/Background.svg',
-                fit: BoxFit.fitHeight,
-              ),
+      body: Stack(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: SvgPicture.asset(
+              'assets/images/Background.svg',
+              fit: BoxFit.fitHeight,
             ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    'assets/images/logo.svg',
-                    height: 200,
-                    fit: BoxFit.scaleDown,
-                  ),
-                  const SizedBox(height: 200),
-                  const CircularProgressIndicator(
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  'assets/images/logo.svg',
+                  height: 200,
+                  fit: BoxFit.scaleDown,
+                ),
+                const SizedBox(
+                  height: 10,
+                  width: 10,
+                  child: CircularProgressIndicator(
                     color: Colors.black,
                   ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Version 1.0',
-                    style: TextStyle(fontSize: 10),
-                  ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Version 1.0',
+                  style: TextStyle(fontSize: 10),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
