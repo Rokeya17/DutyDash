@@ -1,4 +1,6 @@
+import 'package:dutydash/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   const UpdateProfileScreen({super.key});
@@ -95,7 +97,9 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const Homescreen());
+                  },
                   child: const Text('Update'),
                 ),
               )

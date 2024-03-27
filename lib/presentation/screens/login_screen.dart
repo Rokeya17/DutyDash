@@ -1,4 +1,5 @@
 import 'package:dutydash/presentation/screens/create_accountscreen.dart';
+import 'package:dutydash/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,7 +68,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 25,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const Homescreen());
+                },
                 child: const Icon(Icons.arrow_forward_ios),
               ),
             ),

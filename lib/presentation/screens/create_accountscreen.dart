@@ -1,3 +1,4 @@
+import 'package:dutydash/presentation/screens/update_ptofile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -117,7 +118,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       TextButton(
                         onPressed: () {
                           setState(() {
-                            Get.to(const CreateAccountScreen());
+                            Get.to(const UpdateProfileScreen());
                           });
                         },
                         child: const Text('Signin'),
