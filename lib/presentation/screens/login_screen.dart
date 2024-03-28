@@ -27,91 +27,98 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _emailEditingController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: const Text(
+              'Get started with ',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _emailEditingController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.blue),
+                    ),
+                    labelText: 'Enter your email',
+                    suffixIcon: const Icon(Icons.email_outlined),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _passwordEditingController,
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                         borderSide: const BorderSide(color: Colors.blue),
                       ),
-
-                      labelText:
-                          'Enter your email', // Use labelText instead of label
-                      suffixIcon: const Icon(Icons.email_outlined),
-                    ),
+                      labelText: 'Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisibility = !_passwordVisibility;
+                            });
+                          },
+                          icon: _passwordVisibility
+                              ? const Icon(Icons.visibility)
+                              : const Icon(Icons.visibility_off))),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                  height: 30,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.to(const Homescreen());
+                    },
+                    child: const Icon(Icons.arrow_forward_ios),
                   ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  TextFormField(
-                    controller: _passwordEditingController,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.blue),
-                        ),
-                        labelText: 'Password',
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                _passwordVisibility = !_passwordVisibility;
-                              });
-                            },
-                            icon: _passwordVisibility
-                                ? const Icon(Icons.visibility)
-                                : const Icon(Icons.visibility_off))),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    height: 30,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Get.to(const Homescreen());
-                      },
-                      child: const Icon(Icons.arrow_forward_ios),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Forget Password?'),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Don't have an account?"),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            Get.to(const CreateAccountScreen());
-                          });
-                        },
-                        child: const Text('SignUp'),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Forget Password?'),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("Don't have an account?"),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    Get.to(const CreateAccountScreen());
+                  });
+                },
+                child: const Text('SignUp'),
               ),
-            )
-          ],
-        ),
-      ),
+            ],
+          ),
+        ],
+      )),
     );
   }
 }
