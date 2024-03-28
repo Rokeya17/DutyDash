@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'create_accountscreen.dart';
-import 'home_screen.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinVerificationScreen extends StatefulWidget {
   const PinVerificationScreen({super.key});
@@ -12,82 +9,47 @@ class PinVerificationScreen extends StatefulWidget {
 }
 
 class _PinVerificationScreenState extends State<PinVerificationScreen> {
+  TextEditingController _pinVtextEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            AppBar(
-              title: const Text(
-                'Get Started with',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
-              ),
-              leading: const BackButton(
-                color: Colors.black,
-              ),
-              backgroundColor: Colors.transparent,
-              elevation: 0,
+            Text(
+              'Enter the PIN sent to your mobile number',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18.0),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: const BorderSide(color: Colors.blue),
-                      ),
-
-                      labelText:
-                          'Enter your email', // Use labelText instead of label
-                      suffixIcon: const Icon(Icons.email_outlined),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    height: 30,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Get.to(const Homescreen());
-                      },
-                      child: const Icon(Icons.arrow_forward_ios),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Forget Password?'),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Don't have an account?"),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            Get.to(const CreateAccountScreen());
-                          });
-                        },
-                        child: const Text('SignUp'),
-                      ),
-                    ],
-                  ),
-                ],
+            SizedBox(height: 20.0),
+            PinCodeTextField(
+              appContext: context,
+              controller: _pinVtextEditingController,
+              length: 6,
+              keyboardType: TextInputType.number,
+              obscureText: false,
+              animationType: AnimationType.fade,
+              pinTheme: PinTheme(
+                shape: PinCodeFieldShape.box,
+                borderRadius: BorderRadius.circular(5),
+                fieldHeight: 50,
+                fieldWidth: 40,
+                inactiveFillColor: Colors.grey[200]!,
+                activeFillColor: Colors.white,
+                selectedFillColor: Colors.white,
+                inactiveColor: Colors.grey,
+                activeColor: Colors.black,
+                selectedColor: Colors.black,
               ),
-            )
+              onChanged: (value) {},
+            ),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Verify PIN'),
+            ),
           ],
         ),
       ),

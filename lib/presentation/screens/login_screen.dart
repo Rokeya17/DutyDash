@@ -31,9 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: const Text(
+          const Padding(
+            padding: EdgeInsets.only(left: 16.0),
+            child: Text(
               'Get started with ',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
