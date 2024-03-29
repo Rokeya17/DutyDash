@@ -1,56 +1,139 @@
-import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+class OtpVerificationScreen extends StatelessWidget {
+  final String email;
 
-class PinVerificationScreen extends StatefulWidget {
-  const PinVerificationScreen({super.key});
+  OtpVerificationScreen({Key? key, required this.email}) : super(key: key);
 
-  @override
-  State<PinVerificationScreen> createState() => _PinVerificationScreenState();
-}
+  final TextEditingController _otpTEController = TextEditingController();
 
-class _PinVerificationScreenState extends State<PinVerificationScreen> {
-  TextEditingController _pinVtextEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Enter the PIN sent to your mobile number',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18.0),
-            ),
-            SizedBox(height: 20.0),
-            PinCodeTextField(
-              appContext: context,
-              controller: _pinVtextEditingController,
-              length: 6,
-              keyboardType: TextInputType.number,
-              obscureText: false,
-              animationType: AnimationType.fade,
-              pinTheme: PinTheme(
-                shape: PinCodeFieldShape.box,
-                borderRadius: BorderRadius.circular(5),
-                fieldHeight: 50,
-                fieldWidth: 40,
-                inactiveFillColor: Colors.grey[200]!,
-                activeFillColor: Colors.white,
-                selectedFillColor: Colors.white,
-                inactiveColor: Colors.grey,
-                activeColor: Colors.black,
-                selectedColor: Colors.black,
+      body: ScreenBackground(
+        child: Center(
+          child: SingleChildScrollView(
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 64,
+                    ),
+                    Text(
+                      'OTP Verification',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'A 6 digits pin will sent to your email address',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    SizedBox(
+                      height: 60,
+                      child: PinCodeTextField(
+                        controller: _otpTEController,
+                        keyboardType: TextInputType.number,
+                        length: 6,
+                        obscureText: false,
+                        animationType: AnimationType.fade,
+                        pinTheme: PinTheme(
+                          shape: PinCodeFieldShape.box,
+                          borderRadius: BorderRadius.circular(5),
+                          fieldHeight: 60,
+                          fieldWidth: 50,
+                          inactiveFillColor: Colors.white,
+                          activeFillColor: Colors.white,
+                          inactiveColor: Colors.red,
+                          activeColor: Colors.white,
+                          selectedFillColor: Colors.white,
+                          selectedColor: Colors.green,
+                        ),
+                        animationDuration: const Duration(milliseconds: 300),
+                        backgroundColor: Colors.white,
+                        cursorColor: Colors.green,
+                        enableActiveFill: true,
+                        appContext: context,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    GetBuilder<OtpVerificationController>(
+                        builder: (OtpVerificationController) {
+                          return SizedBox(
+                            width: double.infinity,
+                            child: Visibility(
+                              visible: OtpVerificationController
+                                  .otpVerificationInProgress ==
+                                  false,
+                              replacement: const Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  OtpVerificationController.verifyOTP(
+                                    email,
+                                    _otpTEController.text,
+                                  ).then((value) {
+                                    if (value) {
+                                      Get.snackbar(
+                                        'Success',
+                                        'Otp verification success!',
+                                        backgroundColor: Colors.green,
+                                        colorText: Colors.white,
+                                        borderRadius: 10,
+                                      );
+                                      Get.to(() => ResetPasswordScreen(
+                                        email: email,
+                                        otp: _otpTEController.text,
+                                      ));
+                                    } else {
+                                      Get.snackbar(
+                                        'Failed',
+                                        'Otp verification has been failed!',
+                                        backgroundColor: Colors.red,
+                                        colorText: Colors.white,
+                                        borderRadius: 10,
+                                      );
+                                    }
+                                  });
+                                },
+                                child: const Text('Verify'),
+                              ),
+                            ),
+                          );
+                        }),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Have an account?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, letterSpacing: 0.5),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              Get.off(const LoginScreen());
+                            },
+                            child: const Text('Sign in')),
+                      ],
+                    )
+                  ],
+                ),
               ),
-              onChanged: (value) {},
             ),
-            SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Verify PIN'),
-            ),
-          ],
+          ),
         ),
       ),
     );
