@@ -12,7 +12,7 @@ class DutyDash extends StatelessWidget {
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.light,
-      home: const PinVerificationScreen(),
+      home: Pinverificationscreen(),
     );
   }
 }

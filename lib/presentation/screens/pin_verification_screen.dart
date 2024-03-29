@@ -1,144 +1,46 @@
-import 'package:dutydash/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../auth/pin_verification_controller.dart';
+class Pinverificationscreen extends StatefulWidget {
+  const Pinverificationscreen({super.key});
 
-class PINVerificationScreen extends StatelessWidget {
-  final String email;
+  @override
+  State<Pinverificationscreen> createState() => _PinverificationscreenState();
+}
 
-  PINVerificationScreen({Key? key, required this.email}) : super(key: key);
-
-  final TextEditingController _PINTEController = TextEditingController();
-
+class _PinverificationscreenState extends State<Pinverificationscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('PIN Verification'),
+      ),
       body: Center(
-        child: SingleChildScrollView(
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  Text(
-                    'OTP Verification',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    'A 6 digits pin will sent to your email address',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Colors.grey,
-                        ),
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  SizedBox(
-                    height: 60,
-                    child: PinCodeTextField(
-                      controller: _PINTEController,
-                      keyboardType: TextInputType.number,
-                      length: 6,
-                      obscureText: false,
-                      animationType: AnimationType.fade,
-                      pinTheme: PinTheme(
-                        shape: PinCodeFieldShape.box,
-                        borderRadius: BorderRadius.circular(5),
-                        fieldHeight: 60,
-                        fieldWidth: 50,
-                        inactiveFillColor: Colors.white,
-                        activeFillColor: Colors.white,
-                        inactiveColor: Colors.red,
-                        activeColor: Colors.white,
-                        selectedFillColor: Colors.white,
-                        selectedColor: Colors.green,
-                      ),
-                      animationDuration: const Duration(milliseconds: 300),
-                      backgroundColor: Colors.white,
-                      cursorColor: Colors.green,
-                      enableActiveFill: true,
-                      appContext: context,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  GetBuilder<PINVerificationController>(
-                      builder: (PINVerificationController) {
-                    return SizedBox(
-                      width: double.infinity,
-                      child: Visibility(
-                        visible: PINVerificationController
-                                .PINVerificationInProgress ==
-                            false,
-                        replacement: const Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            PINVerificationController.verifyOTP(
-                              email,
-                              _PINTEController.text,
-                            ).then((value) {
-                              if (value) {
-                                Get.snackbar(
-                                  'Success',
-                                  'PIN verification success!',
-                                  backgroundColor: Colors.green,
-                                  colorText: Colors.white,
-                                  borderRadius: 10,
-                                );
-                                Get.to(() => ResetPasswordScreen(
-                                      email: email,
-                                      pin: _PINTEController.text,
-                                    ));
-                              } else {
-                                Get.snackbar(
-                                  'Failed',
-                                  'PIN verification has been failed!',
-                                  backgroundColor: Colors.red,
-                                  colorText: Colors.white,
-                                  borderRadius: 10,
-                                );
-                              }
-                            });
-                          },
-                          child: const Text('Verify'),
-                        ),
-                      ),
-                    );
-                  }),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Have an account?",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, letterSpacing: 0.5),
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Get.off(const LoginScreen());
-                          },
-                          child: const Text('Sign in')),
-                    ],
-                  )
-                ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'Enter your PIN:',
+              style: TextStyle(fontSize: 20.0),
+            ),
+            const SizedBox(height: 20.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 60.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter PIN',
+                  border: OutlineInputBorder(),
+                ),
+                maxLength: 4,
+                keyboardType: TextInputType.number,
+                obscureText: true,
               ),
             ),
-          ),
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Verify'),
+            ),
+          ],
         ),
       ),
     );
