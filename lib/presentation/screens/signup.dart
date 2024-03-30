@@ -2,14 +2,14 @@ import 'package:dutydash/presentation/screens/update_ptofile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+class SignUPScreen extends StatefulWidget {
+  const SignUPScreen({super.key});
 
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<SignUPScreen> createState() => _SignUPScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _SignUPScreenState extends State<SignUPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(24),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,

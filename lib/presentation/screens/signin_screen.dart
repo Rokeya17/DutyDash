@@ -1,5 +1,5 @@
-import 'package:dutydash/presentation/screens/create_accountscreen.dart';
 import 'package:dutydash/presentation/screens/home_screen.dart';
+import 'package:dutydash/presentation/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,10 +32,13 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.only(left: 16.0),
+            padding: EdgeInsets.only(left: 16),
             child: Text(
               'Get started with ',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           const SizedBox(
@@ -94,11 +97,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 5,
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: const Text('Forget Password?'),
+                  child: const Text(
+                    'Forget Password?',
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ),
               ],
             ),
@@ -110,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextButton(
                 onPressed: () {
                   setState(() {
-                    Get.to(const CreateAccountScreen());
+                    Get.to(const SignUPScreen());
                   });
                 },
                 child: const Text('SignUp'),
