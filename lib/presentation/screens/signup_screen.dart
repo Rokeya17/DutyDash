@@ -1,7 +1,5 @@
+import 'package:dutydash/presentation/screens/bottomnav_base_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'email_verification_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -113,9 +111,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.to(const EmailVerificationScreen());
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BottomNavScreen()),
+                            (route) => false);
                       },
-                      child: const Icon(Icons.arrow_forward_ios),
+                      child: const Icon(Icons.arrow_circle_right_outlined),
                     ),
                   ),
                   const SizedBox(
