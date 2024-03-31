@@ -1,4 +1,6 @@
+import 'package:dutydash/presentation/screens/otp_verification_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({super.key});
@@ -57,7 +59,10 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 height: 30,
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: const Icon(Icons.arrow_forward)),
+                    onPressed: () {
+                      Get.to(const OTPVerificationScreen());
+                    },
+                    child: const Icon(Icons.arrow_forward)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
