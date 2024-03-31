@@ -1,5 +1,5 @@
 import 'package:dutydash/presentation/screens/home_screen.dart';
-import 'package:dutydash/presentation/screens/signup.dart';
+import 'package:dutydash/presentation/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextButton(
                 onPressed: () {
                   setState(() {
-                    Get.to(const SignUPScreen());
+                    Get.to(const SignUpScreen());
                   });
                 },
                 child: const Text('SignUp'),

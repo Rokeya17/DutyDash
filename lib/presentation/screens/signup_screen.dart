@@ -1,38 +1,40 @@
-import 'package:dutydash/presentation/screens/update_ptofile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUPScreen extends StatefulWidget {
-  const SignUPScreen({super.key});
+import 'email_verification_screen.dart';
+
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignUPScreen> createState() => _SignUPScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUPScreenState extends State<SignUPScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
+  bool _passwordVisibility = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: const BackButton(
-            color: Colors.black,
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: const BackButton(
+          color: Colors.black,
         ),
-        body: SingleChildScrollView(
+      ),
+      body: Center(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(24),
-            child: Column(
+            child: SafeArea(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Join With Us',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        color: Colors.blue,
-                        fontSize: 25),
+                    "Join With Us",
+                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 30),
                   ),
                   const SizedBox(
                     height: 16,
@@ -42,7 +44,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)),
                         label: const Text(
-                          'email',
+                          'Email',
                           style: TextStyle(fontSize: 16),
                         )),
                   ),
@@ -86,7 +88,7 @@ class _SignUPScreenState extends State<SignUPScreen> {
                     height: 16,
                   ),
                   TextFormField(
-                    obscureText: true,
+                    obscureText: !_passwordVisibility,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -94,17 +96,25 @@ class _SignUPScreenState extends State<SignUPScreen> {
                         ),
                         labelText: 'Password',
                         suffixIcon: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.hide_source))),
+                            onPressed: () {
+                              setState(() {
+                                _passwordVisibility = !_passwordVisibility;
+                              });
+                            },
+                            icon: _passwordVisibility
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off))),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   SizedBox(
-                    height: 25,
+                    height: 30,
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const EmailVerificationScreen());
+                      },
                       child: const Icon(Icons.arrow_forward_ios),
                     ),
                   ),
@@ -116,17 +126,17 @@ class _SignUPScreenState extends State<SignUPScreen> {
                     children: [
                       const Text("Have an account?"),
                       TextButton(
-                        onPressed: () {
-                          setState(() {
-                            Get.to(const UpdateProfileScreen());
-                          });
-                        },
-                        child: const Text('Signin'),
+                        onPressed: () {},
+                        child: const Text('Sign In'),
                       ),
                     ],
                   ),
-                ]),
+                ],
+              ),
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
