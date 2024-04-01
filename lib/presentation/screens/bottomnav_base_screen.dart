@@ -5,7 +5,7 @@ class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({super.key});
 
   @override
-  _BottomNavScreenState createState() => _BottomNavScreenState();
+  State<StatefulWidget> createState() => _BottomNavScreenState();
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
@@ -31,11 +31,11 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       body: _pages[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.blueGrey,
-        items: <Widget>[
-          const Icon(Icons.list, size: 30),
-          const Icon(Icons.lock_clock_outlined, size: 30),
-          const Icon(Icons.delete, size: 30),
-          const Icon(Icons.done_all, size: 30),
+        items: const <Widget>[
+          Icon(Icons.list, size: 30),
+          Icon(Icons.lock_clock_outlined, size: 30),
+          Icon(Icons.delete, size: 30),
+          Icon(Icons.done_all, size: 30),
         ],
         onTap: _onItemTapped,
       ),
