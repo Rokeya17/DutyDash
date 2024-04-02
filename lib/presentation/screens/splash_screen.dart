@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToLogin() {
-    Future.delayed(const Duration(seconds: 3)).then((_) {
+    Future.delayed(const Duration(seconds: 10)).then((_) {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => const SignInScreen()),
@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 SvgPicture.asset(
                   'assets/images/logo.svg',
-                  height: 200,
+                  height: 250,
                   fit: BoxFit.scaleDown,
                 ),
                 const SizedBox(
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     color: Colors.black,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 200),
                 const Text(
                   'Version 1.0',
                   style: TextStyle(fontSize: 10),

@@ -13,3 +13,12 @@ Dutydash is a Flutter application that offers task tracking features to users vi
 - Clean architecture pattern: Design the system with a clean architecture pattern to ensure scalability and maintainability.
 - Validation: Implement input validation to enhance data integrity and prevent errors.
 - Version control with Git: Utilize Git for version control to track changes, collaborate with team members, and manage codebase effectively.
+
+## Screenshorts
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
+![img_5.png](img_5.png)
+![img_7.png](img_7.png)

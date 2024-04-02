@@ -10,6 +10,27 @@ class AddNewTaskScreen extends StatefulWidget {
 class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Card(
+                child: Column(
+                  children: [
+                    Text(
+                      '123',
+                      style:
+                          TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
+                    ),
+                    Text('New')
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
