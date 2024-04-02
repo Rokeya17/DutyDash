@@ -10,6 +10,8 @@ class DoneTaskScreen extends StatefulWidget {
 class _DoneTaskScreenState extends State<DoneTaskScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }

@@ -10,6 +10,8 @@ class InProgressTask extends StatefulWidget {
 class _InProgressTaskState extends State<InProgressTask> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }
