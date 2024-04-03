@@ -11,15 +11,7 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          Card(
-            child: Row(
-              children: [Text('123'), Text('New')],
-            ),
-          )
-        ],
-      ),
+      body: Column(),
     );
   }
 }
