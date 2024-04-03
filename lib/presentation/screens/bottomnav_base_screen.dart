@@ -25,9 +25,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
-      body: SingleChildScrollView(child: _screens[_selectedIndex]),
+      body: _screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueGrey,
+        index: _selectedIndex,
+        backgroundColor: Colors.white,
         color: Colors.grey,
         items: const <Widget>[
           Icon(Icons.list, size: 30),

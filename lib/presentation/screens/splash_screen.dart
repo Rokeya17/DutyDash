@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 SvgPicture.asset(
                   'assets/images/logo.svg',
-                  height: 250,
+                  height: 20,
                   fit: BoxFit.scaleDown,
                 ),
                 const SizedBox(
