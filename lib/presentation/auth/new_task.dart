@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/widgets/Summary_card.dart';
+import 'package:dutydash/presentation/widgets/summary_card.dart';
 import 'package:flutter/material.dart';
 
 class NewTaskScreen extends StatefulWidget {

@@ -10,6 +10,14 @@ class InProgressScreen extends StatefulWidget {
 class _InProgressScreenState extends State<InProgressScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          const Text('New'),
+          TextFormField(),
+          ElevatedButton(onPressed: () {}, child: const Text('Progress'))
+        ],
+      ),
+    );
   }
 }
