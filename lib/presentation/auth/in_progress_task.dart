@@ -14,7 +14,10 @@ class _InProgressScreenState extends State<InProgressScreen> {
       body: Column(
         children: [
           const Text('New'),
-          TextFormField(),
+          TextFormField(
+            minLines: 10,
+            maxLines: 20,
+          ),
           ElevatedButton(onPressed: () {}, child: const Text('Progress'))
         ],
       ),
