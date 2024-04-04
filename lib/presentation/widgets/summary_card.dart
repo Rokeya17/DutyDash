@@ -4,12 +4,7 @@ class SummaryCard extends StatelessWidget {
   final int number;
   final String title;
 
-  const SummaryCard({
-    super.key,
-    required this.number,
-    required this.title,
-  });
-
+  const SummaryCard({super.key, required this.number, required this.title});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,7 +19,6 @@ class SummaryCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    // Wrap the Column with Expanded
                     child: Text(
                       '${number < 10 ? '0$number' : number}',
                       style: const TextStyle(
@@ -37,7 +31,7 @@ class SummaryCard extends StatelessWidget {
                     title,
                     style: const TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ]),

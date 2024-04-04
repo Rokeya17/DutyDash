@@ -10,8 +10,6 @@ class DeleteTaskScreen extends StatefulWidget {
 class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
+    return const Placeholder();
   }
 }

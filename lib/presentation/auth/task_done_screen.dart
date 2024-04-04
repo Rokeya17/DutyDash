@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-class DoneTaskScreen extends StatefulWidget {
-  const DoneTaskScreen({super.key});
+class TaskDoneScreen extends StatefulWidget {
+  const TaskDoneScreen({super.key});
 
   @override
-  State<DoneTaskScreen> createState() => _DoneTaskScreenState();
+  State<TaskDoneScreen> createState() => _TaskDoneScreenState();
 }
 
-class _DoneTaskScreenState extends State<DoneTaskScreen> {
+class _TaskDoneScreenState extends State<TaskDoneScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
+    return const Placeholder();
   }
 }
