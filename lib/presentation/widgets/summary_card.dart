@@ -5,6 +5,7 @@ class SummaryCard extends StatelessWidget {
   final String title;
 
   const SummaryCard({super.key, required this.number, required this.title});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

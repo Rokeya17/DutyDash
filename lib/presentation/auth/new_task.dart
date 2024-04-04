@@ -15,7 +15,20 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       body: Column(
         children: [
           Row(
-            children: [SummaryCard(number: 01, title: 'New')],
+            children: [
+              Expanded(
+                child: SummaryCard(number: 01, title: 'New'),
+              ),
+              Expanded(
+                child: SummaryCard(number: 01, title: 'New'),
+              ),
+              Expanded(
+                child: SummaryCard(number: 01, title: 'New'),
+              ),
+              Expanded(
+                child: SummaryCard(number: 01, title: 'New'),
+              ),
+            ],
           ),
         ],
       ),
