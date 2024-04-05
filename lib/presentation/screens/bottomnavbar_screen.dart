@@ -27,17 +27,16 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
       body: _screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         index: _selectedIndex,
-        color: Colors.green,
+        color: Colors.blueAccent,
         backgroundColor: Colors.transparent,
-        buttonBackgroundColor: Colors.green,
-        height: 50,
+        buttonBackgroundColor: Colors.blueAccent,
         items: const <Widget>[
           Icon(
             Icons.list_alt,
             size: 30,
             color: Colors.white,
           ),
-          Icon(Icons.access_time_rounded, size: 30, color: Colors.white),
+          Icon(Icons.pending_actions_outlined, size: 30, color: Colors.white),
           Icon(Icons.cancel_outlined, size: 30, color: Colors.white),
           Icon(Icons.check_circle_outlined, size: 30, color: Colors.white),
         ],

@@ -1,5 +1,5 @@
 import 'package:dutydash/presentation/screens/otp_verification_screen.dart';
-import 'package:dutydash/presentation/screens/signin_screen.dart';
+import 'package:dutydash/presentation/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -71,9 +71,9 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   const Text('Have an account?'),
                   TextButton(
                       onPressed: () {
-                        Get.to(const SignInScreen());
+                        Get.to(const SignUpScreen());
                       },
-                      child: const Text('signIn'))
+                      child: const Text('signUp'))
                 ],
               ),
             ],
