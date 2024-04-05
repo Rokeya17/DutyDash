@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/screens/bottomnav_screen.dart';
+import 'package:dutydash/presentation/screens/bottomnavbar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -103,7 +103,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(const BottomNavScreen());
+                    Get.to(const BottomNavbarScreen());
                   },
                   child: const Text('Update'),
                 ),

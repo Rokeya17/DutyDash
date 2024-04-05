@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/screens/bottomnav_screen.dart';
+import 'package:dutydash/presentation/screens/bottomnavbar_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -114,7 +114,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BottomNavScreen()),
+                                builder: (context) =>
+                                    const BottomNavbarScreen()),
                             (route) => false);
                       },
                       child: const Icon(Icons.arrow_circle_right_outlined),
