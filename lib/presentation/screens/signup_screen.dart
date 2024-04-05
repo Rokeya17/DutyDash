@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/screens/bottomnav_base_screen.dart';
+import 'package:dutydash/presentation/screens/bottomnav_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
