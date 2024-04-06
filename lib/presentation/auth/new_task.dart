@@ -1,3 +1,4 @@
+import 'package:dutydash/presentation/widgets/summary_card.dart';
 import 'package:flutter/material.dart';
 
 class NewTaskScreen extends StatefulWidget {
@@ -15,13 +16,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         child: Column(
           children: [
             Row(
-              children: [
-                Card(
-                  child: Column(
-                    children: [Text('000'), Text('NEW')],
-                  ),
-                )
-              ],
+              children: [SummaryCard(number: 01, title: 'New')],
             )
           ],
         ),
