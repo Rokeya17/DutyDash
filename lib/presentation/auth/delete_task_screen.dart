@@ -11,7 +11,19 @@ class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      body: Column(
+        children: [
+          const Text(
+            'Task 02',
+            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
+          ),
+          TextFormField(
+            maxLines: 10,
+            minLines: 01,
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text('Pending'))
+        ],
+      ),
     );
   }
 }
