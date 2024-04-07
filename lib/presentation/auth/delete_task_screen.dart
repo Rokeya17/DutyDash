@@ -21,7 +21,18 @@ class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
             maxLines: 10,
             minLines: 01,
           ),
-          ElevatedButton(onPressed: () {}, child: const Text('Pending'))
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Pending'),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.edit_note),
+              ),
+            ],
+          )
         ],
       ),
     );
