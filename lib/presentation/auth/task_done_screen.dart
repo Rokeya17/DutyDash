@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
 
-class TaskDoneScreen extends StatefulWidget {
-  const TaskDoneScreen({super.key});
+class TaskDone extends StatefulWidget {
+  const TaskDone({super.key});
 
   @override
-  State<TaskDoneScreen> createState() => _TaskDoneScreenState();
+  State<TaskDone> createState() => _TaskDoneState();
 }
 
-class _TaskDoneScreenState extends State<TaskDoneScreen> {
+class _TaskDoneState extends State<TaskDone> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(
-              Icons.check_circle,
-              size: 100,
-              color: Colors.green,
-            ),
-            SizedBox(height: 20),
+          children: [
             Text(
-              'Task Completed!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              'Task 01',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Back to Tasks'),
-            ),
+            TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+              minLines: 1,
+              maxLines: 10,
+            )
           ],
         ),
       ),

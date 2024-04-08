@@ -1,4 +1,4 @@
-import 'package:dutydash/presentation/auth/delete_task_screen.dart';
+import 'package:dutydash/presentation/auth/canceled_task_screen.dart';
 import 'package:dutydash/presentation/auth/in_progress_task.dart';
 import 'package:dutydash/presentation/auth/task_done_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +17,8 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   final List<Widget> _screens = const [
     NewTaskScreen(),
     InProgressScreen(),
-    DeleteTaskScreen(),
-    TaskDoneScreen(),
+    CanceledTaskScreen(),
+    TaskDone(),
   ];
 
   @override
