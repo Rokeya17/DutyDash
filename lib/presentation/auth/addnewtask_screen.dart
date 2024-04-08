@@ -64,8 +64,6 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
                       return SizedBox(
                         width: double.infinity,
                         child: Visibility(
-                          visible:
-                              !addNewTaskController.adNewTaskInProgress.value,
                           replacement: const Center(
                             child: CircularProgressIndicator(),
                           ),
