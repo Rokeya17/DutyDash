@@ -1,3 +1,7 @@
+import 'package:dutydash/presentation/auth/canceled_task_screen.dart';
+import 'package:dutydash/presentation/auth/in_progress_task.dart';
+import 'package:dutydash/presentation/auth/new_task.dart';
+import 'package:dutydash/presentation/auth/task_done_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -10,13 +14,17 @@ class BottomNavBarScreen extends StatefulWidget {
 
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int _selectedIndex = 0;
+  final List<Widget> _screens = const [
+    NewTaskScreen(),
+    InProgressScreen(),
+    TaskDone(),
+    DeleteTaskScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Page ${_selectedIndex + 1}'),
-      ),
+      body: _screens[_selectedIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))

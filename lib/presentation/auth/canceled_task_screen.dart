@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CanceledTaskScreen extends StatefulWidget {
-  const CanceledTaskScreen({super.key});
+class DeleteTaskScreen extends StatefulWidget {
+  const DeleteTaskScreen({super.key});
 
   @override
-  State<CanceledTaskScreen> createState() => _CanceledTaskScreen();
+  State<DeleteTaskScreen> createState() => _DeleteTaskScreenState();
 }
 
-class _CanceledTaskScreen extends State<CanceledTaskScreen> {
+class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
