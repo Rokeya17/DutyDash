@@ -39,7 +39,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
               BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
             ],
             curve: Curves.easeOutExpo,
-            duration: const Duration(milliseconds: 900),
+            duration: const Duration(seconds: 3),
             gap: 8,
             color: Colors.blueAccent[800],
             activeColor: Colors.black,
@@ -69,12 +69,6 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: BottomNavBarScreen(),
-  ));
 }
 
 // import 'package:dutydash/presentation/auth/canceled_task_screen.dart';
