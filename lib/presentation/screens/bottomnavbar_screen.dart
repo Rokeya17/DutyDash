@@ -47,7 +47,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
               BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
             ],
             curve: Curves.easeOutExpo,
-            duration: const Duration(seconds: 3),
+            duration: const Duration(milliseconds: 300),
             gap: 8,
             color: Colors.blueAccent[800],
             activeColor: Colors.black,
@@ -57,17 +57,21 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             tabs: const [
               GButton(
                 icon: Icons.home,
+                duration: Duration(milliseconds: 300),
                 text: 'Home',
               ),
               GButton(
+                duration: Duration(milliseconds: 300),
                 icon: Icons.lock_clock,
                 text: 'InProgress',
               ),
               GButton(
+                duration: Duration(milliseconds: 300),
                 icon: Icons.checklist,
                 text: 'Done',
               ),
               GButton(
+                duration: Duration(milliseconds: 300),
                 icon: Icons.delete,
                 text: 'Delete',
               ),
