@@ -115,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const BottomNavbarScreen()),
+                                    const BottomNavBarScreen()),
                             (route) => false);
                       },
                       child: const Icon(Icons.arrow_circle_right_outlined),

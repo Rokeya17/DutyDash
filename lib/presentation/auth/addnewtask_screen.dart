@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/add_new_task_controller.dart'; // Import the AddNewTaskController
-import '../screens/bottomnavbar_screen.dart';
 
 class AddNewTaskScreen extends StatefulWidget {
   const AddNewTaskScreen({Key? key}) : super(key: key);
@@ -95,7 +94,6 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
                                   );
                                 }
                               });
-                              Get.off(const BottomNavbarScreen());
                             },
                             child: const Icon(Icons.arrow_forward_ios),
                           ),

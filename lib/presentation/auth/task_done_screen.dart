@@ -14,7 +14,7 @@ class _TaskDoneState extends State<TaskDone> {
       body: SafeArea(
         child: Column(
           children: [
-            Text(
+            const Text(
               'Task 01',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
             ),
