@@ -56,9 +56,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             tabs: const [
               GButton(
-                icon: Icons.home,
+                icon: Icons.list,
                 duration: Duration(milliseconds: 300),
-                text: 'Home',
+                text: 'NEW Task',
               ),
               GButton(
                 duration: Duration(milliseconds: 300),
