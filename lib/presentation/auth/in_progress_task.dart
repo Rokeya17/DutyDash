@@ -29,6 +29,7 @@ class _InProgressScreenState extends State<InProgressScreen> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10))),
             ),
+            ElevatedButton(onPressed: () {}, child: Text('process'))
           ],
         ),
       ),
