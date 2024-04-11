@@ -17,7 +17,10 @@ class _InProgressScreenState extends State<InProgressScreen> {
           children: [
             const Text(
               'NEW Task',
-              style: TextStyle(fontWeight: FontWeight.w800),
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 08,
             ),
             TextFormField(
               maxLines: 10,
