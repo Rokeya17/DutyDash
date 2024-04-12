@@ -40,7 +40,7 @@ class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
                       onPressed: () {}, child: const Text('Canceled')),
                   IconButton(
                       onPressed: () {}, icon: const Icon(Icons.edit_note)),
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
                 ],
               ),
             ],
