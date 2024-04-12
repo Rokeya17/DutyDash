@@ -34,7 +34,15 @@ class _InProgressScreenState extends State<InProgressScreen> {
               const SizedBox(
                 height: 08,
               ),
-              ElevatedButton(onPressed: () {}, child: const Text('process'))
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text('process')),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.edit_note)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
+                ],
+              ),
             ],
           ),
         ),

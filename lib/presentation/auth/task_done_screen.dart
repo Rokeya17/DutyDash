@@ -12,23 +12,39 @@ class _TaskDoneState extends State<TaskDone> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const Text(
-              'Task 01',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide.none,
-                ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'NEW Task',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              minLines: 1,
-              maxLines: 10,
-            )
-          ],
+              const SizedBox(
+                height: 08,
+              ),
+              TextFormField(
+                maxLines: 10,
+                minLines: 1,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ),
+              const SizedBox(
+                height: 08,
+              ),
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text('Completed')),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.edit_note)),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
