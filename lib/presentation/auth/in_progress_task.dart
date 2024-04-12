@@ -12,28 +12,31 @@ class _InProgressScreenState extends State<InProgressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'NEW Task',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              height: 08,
-            ),
-            TextFormField(
-              maxLines: 10,
-              minLines: 1,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10))),
-            ),
-            SizedBox(
-              height: 08,
-            ),
-            ElevatedButton(onPressed: () {}, child: Text('process'))
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'NEW Task',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 08,
+              ),
+              TextFormField(
+                maxLines: 10,
+                minLines: 1,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10))),
+              ),
+              const SizedBox(
+                height: 08,
+              ),
+              ElevatedButton(onPressed: () {}, child: const Text('process'))
+            ],
+          ),
         ),
       ),
     );
