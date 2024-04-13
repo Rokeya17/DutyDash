@@ -35,6 +35,7 @@ class _DeleteTaskScreenState extends State<DeleteTaskScreen> {
                 height: 08,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
                       onPressed: () {}, child: const Text('Canceled')),
