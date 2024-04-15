@@ -1,5 +1,5 @@
+import 'package:dutydash/presentation/screens/bottomnavbar_screen.dart';
 import 'package:dutydash/presentation/screens/email_verification_screen.dart';
-import 'package:dutydash/presentation/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -117,7 +117,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   const Text("Don't have an account?"),
                   TextButton(
                     onPressed: () {
-                      Get.to(const SignUpScreen());
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BottomNavBarScreen()),
+                          (route) => false);
                       setState(() {});
                     },
                     child: const Text(
