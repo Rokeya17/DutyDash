@@ -103,7 +103,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(const BottomNavBarScreen());
+                    Get.to(const BottomNavBarBaseScreen());
                   },
                   child: const Text('Update'),
                 ),
