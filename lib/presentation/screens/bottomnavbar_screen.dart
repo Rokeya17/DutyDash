@@ -1,18 +1,19 @@
-import 'package:dutydash/presentation/auth/canceled_task_screen.dart';
-import 'package:dutydash/presentation/auth/in_progress_task.dart';
-import 'package:dutydash/presentation/auth/new_task.dart';
-import 'package:dutydash/presentation/auth/task_done_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class BottomNavBarScreen extends StatefulWidget {
-  const BottomNavBarScreen({super.key});
+import '../auth/canceled_task_screen.dart';
+import '../auth/in_progress_task.dart';
+import '../auth/new_task.dart';
+import '../auth/task_done_screen.dart';
+
+class BottomNavBarBaseScreen extends StatefulWidget {
+  const BottomNavBarBaseScreen({super.key});
 
   @override
-  State<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
+  State<BottomNavBarBaseScreen> createState() => _BottomNavBarBaseScreenState();
 }
 
-class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
+class _BottomNavBarBaseScreenState extends State<BottomNavBarBaseScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = const [
     NewTaskScreen(),
