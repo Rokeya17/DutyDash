@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/listtitle.dart';
 import '../widgets/summary_card.dart';
+import '../widgets/userbaner.dart';
 
 class NewTaskScreen extends StatefulWidget {
   const NewTaskScreen({Key? key}) : super(key: key);
@@ -86,23 +87,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class UserBanner extends StatelessWidget {
-  const UserBanner({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const ListTile(
-      leading: CircleAvatar(
-        backgroundImage: AssetImage('assets/images/profile.JPG'),
-      ),
-      title: Text('Rokeya Yasmin'),
-      subtitle: Text('rokeya123@gmail.com'),
     );
   }
 }
