@@ -18,13 +18,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              const ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/profile.JPG'),
-                ),
-                title: Text('Rokeya Yasmin'),
-                subtitle: Text('rokeya123@gmail.com'),
-              ),
+              UserBanner(),
 
               const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -61,7 +55,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                 shrinkWrap: true,
                 itemCount: 20,
                 itemBuilder: (context, index) {
-                  return TitleList();
+                  return const TitleList();
                 },
                 separatorBuilder: (BuildContext context, int index) {
                   return const Divider(
@@ -92,6 +86,23 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class UserBanner extends StatelessWidget {
+  const UserBanner({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage('assets/images/profile.JPG'),
+      ),
+      title: Text('Rokeya Yasmin'),
+      subtitle: Text('rokeya123@gmail.com'),
     );
   }
 }
