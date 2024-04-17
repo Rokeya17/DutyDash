@@ -7,4 +7,5 @@ class AssetUtility {
   static const String inprogressSVG = 'assets/images/in-progress.svg';
   static const String deleteSVG = 'assets/images/delete.svg';
   static const String doneSVG = 'assets/images/done.svg';
+  static const String profileJPG = 'assets/images/profile.JPG';
 }
