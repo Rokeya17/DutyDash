@@ -9,6 +9,7 @@ class SummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 04,
       child: Column(
         children: [
           Text(

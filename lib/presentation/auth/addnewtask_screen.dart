@@ -15,14 +15,6 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
       body: Column(
         children: [
           SummaryCard(num: 02, title: 'New'),
-          Text(
-            'Task 01',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-          ),
-          Text('Date:01/02/03'),
-          Chip(
-            label: Text('NEW'),
-          ),
         ],
       ),
     );
