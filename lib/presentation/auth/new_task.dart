@@ -1,8 +1,10 @@
+import 'package:dutydash/presentation/auth/addnewtask_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../widgets/listtitle.dart';
 import '../widgets/summary_card.dart';
-import '../widgets/userbaner.dart';
+import '../widgets/userbanner.dart';
 
 class NewTaskScreen extends StatefulWidget {
   const NewTaskScreen({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              UserBanner(),
+              const UserBannerScreen(),
 
               const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -85,6 +87,16 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               // ),
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey,
+        splashColor: Colors.white,
+        onPressed: () {
+          Get.to(const AddNewTaskScreen());
+        },
+        child: const Icon(
+          Icons.add,
         ),
       ),
     );
