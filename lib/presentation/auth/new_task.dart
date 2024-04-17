@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/listtitle.dart';
 import '../widgets/summary_card.dart';
 
 class NewTaskScreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                 title: Text('Rokeya Yasmin'),
                 subtitle: Text('rokeya123@gmail.com'),
               ),
+
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Row(
@@ -59,33 +61,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                 shrinkWrap: true,
                 itemCount: 20,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: const Text('Title will be here'),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('MIMO the Queeno.'),
-                        const Text('Date'),
-                        Row(
-                          children: [
-                            const Chip(
-                              label: Text('NEW'),
-                              backgroundColor: Colors.blueGrey,
-                            ),
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.edit_note),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.delete),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
+                  return TitleList();
                 },
                 separatorBuilder: (BuildContext context, int index) {
                   return const Divider(
