@@ -24,62 +24,57 @@ class _BottomNavBarBaseScreenState extends State<BottomNavBarBaseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: _screens[_selectedIndex],
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(color: Colors.white, boxShadow: [
-            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
-          ]),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              backgroundColor: Colors.grey,
-              haptic: true,
-              tabBorderRadius: 20,
-              tabActiveBorder: Border.all(color: Colors.black, width: 1),
-              tabBorder: Border.all(color: Colors.grey, width: 1),
-              tabShadow: [
-                BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
-              ],
-              curve: Curves.easeOutExpo,
-              duration: const Duration(milliseconds: 300),
-              gap: 8,
-              color: Colors.blueAccent[800],
-              activeColor: Colors.black,
-              iconSize: 24,
-              tabBackgroundColor: Colors.purple.withOpacity(0.1),
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              tabs: const [
-                GButton(
-                  icon: Icons.list,
-                  duration: Duration(milliseconds: 300),
-                  text: 'NEW Task',
-                ),
-                GButton(
-                  duration: Duration(milliseconds: 300),
-                  icon: Icons.lock_clock,
-                  text: 'InProgress',
-                ),
-                GButton(
-                  duration: Duration(milliseconds: 300),
-                  icon: Icons.checklist,
-                  text: 'Done',
-                ),
-                GButton(
-                  duration: Duration(milliseconds: 300),
-                  icon: Icons.delete,
-                  text: 'Delete',
-                ),
-              ],
+    return Scaffold(
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
+        ]),
+        child: GNav(
+          selectedIndex: _selectedIndex,
+          onTabChange: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          backgroundColor: Colors.grey,
+          haptic: true,
+          tabBorderRadius: 20,
+          tabActiveBorder: Border.all(color: Colors.black, width: 1),
+          tabBorder: Border.all(color: Colors.grey, width: 1),
+          tabShadow: [
+            BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)
+          ],
+          curve: Curves.easeOutExpo,
+          duration: const Duration(milliseconds: 300),
+          gap: 8,
+          color: Colors.blueAccent[800],
+          activeColor: Colors.black,
+          iconSize: 24,
+          tabBackgroundColor: Colors.purple.withOpacity(0.1),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          tabs: const [
+            GButton(
+              icon: Icons.list,
+              duration: Duration(milliseconds: 300),
+              text: 'New Task',
             ),
-          ),
+            GButton(
+              duration: Duration(milliseconds: 300),
+              icon: Icons.lock_clock,
+              text: 'InProgress',
+            ),
+            GButton(
+              duration: Duration(milliseconds: 300),
+              icon: Icons.checklist,
+              text: 'Done',
+            ),
+            GButton(
+              duration: Duration(milliseconds: 300),
+              icon: Icons.delete,
+              text: 'Delete',
+            ),
+          ],
         ),
       ),
     );

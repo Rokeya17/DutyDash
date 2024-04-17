@@ -1,48 +1,25 @@
 import 'package:flutter/material.dart';
 
 class SummaryCard extends StatelessWidget {
-  final int number;
+  final int num;
   final String title;
 
-  const SummaryCard({
-    super.key,
-    required this.number,
-    required this.title,
-  });
+  const SummaryCard({super.key, required this.title, required this.num});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(6),
-          child: Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    // Wrap the Column with Expanded
-                    child: Text(
-                      '${number < 10 ? '0$number' : number}',
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ]),
+    return Card(
+      child: Column(
+        children: [
+          Text(
+            '$num',
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 18,
+            ),
           ),
-        ),
+          Text(title),
+        ],
       ),
     );
   }

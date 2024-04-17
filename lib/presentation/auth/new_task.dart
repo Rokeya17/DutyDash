@@ -1,6 +1,6 @@
-import 'package:dutydash/presentation/auth/addnewtask_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import '../widgets/summary_card.dart';
 
 class NewTaskScreen extends StatefulWidget {
   const NewTaskScreen({Key? key}) : super(key: key);
@@ -13,34 +13,46 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: 80,
-              width: double.infinity,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: 0,
-                itemBuilder: (context, index) {
-                  return Container();
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const Divider(
-                    height: 1,
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        elevation: 0,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          Get.to(const AddNewTaskScreen());
-        },
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: SummaryCard(
+                      title: 'New',
+                      num: 01,
+                    ),
+                  ),
+                  Expanded(
+                    child: SummaryCard(
+                      title: 'Progress',
+                      num: 02,
+                    ),
+                  ),
+                  Expanded(
+                    child: SummaryCard(
+                      title: 'Completed',
+                      num: 03,
+                    ),
+                  ),
+                  Expanded(
+                    child: SummaryCard(
+                      title: 'canceled',
+                      num: 04,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
