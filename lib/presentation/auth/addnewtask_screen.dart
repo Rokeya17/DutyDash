@@ -68,7 +68,7 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                      minLines: 3,
+                      minLines: 2,
                       maxLines: 10,
                     ),
                     const SizedBox(
