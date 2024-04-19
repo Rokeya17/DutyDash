@@ -23,11 +23,17 @@ class TitleList extends StatelessWidget {
               const Spacer(),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.edit_note),
+                icon: const Icon(
+                  Icons.edit_note,
+                  color: Colors.indigoAccent,
+                ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.delete),
+                icon: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
               ),
             ],
           ),

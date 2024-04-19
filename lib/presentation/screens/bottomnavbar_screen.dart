@@ -71,8 +71,8 @@ class _BottomNavBarBaseScreenState extends State<BottomNavBarBaseScreen> {
             ),
             GButton(
               duration: Duration(milliseconds: 300),
-              icon: Icons.delete,
-              text: 'Delete',
+              icon: Icons.cancel_outlined,
+              text: 'Canceled',
             ),
           ],
         ),

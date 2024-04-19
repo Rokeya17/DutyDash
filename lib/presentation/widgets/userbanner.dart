@@ -8,19 +8,22 @@ class UserBannerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      tileColor: Colors.grey,
-      leading: GestureDetector(
-        onTap: () {
-          Get.to(UpdateProfileScreen());
-        },
-        child: CircleAvatar(
-          backgroundColor: Colors.white,
-          backgroundImage: AssetImage(AssetUtility.profileJPG),
+    return SizedBox(
+      height: 60,
+      child: ListTile(
+        tileColor: Colors.grey,
+        leading: GestureDetector(
+          onTap: () {
+            Get.to(UpdateProfileScreen());
+          },
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            backgroundImage: AssetImage(AssetUtility.profileJPG),
+          ),
         ),
+        title: Text('Rokeya Yasmin'),
+        subtitle: Text('rokeya123@gmail.com'),
       ),
-      title: Text('Rokeya Yasmin'),
-      subtitle: Text('rokeya123@gmail.com'),
     );
   }
 }
