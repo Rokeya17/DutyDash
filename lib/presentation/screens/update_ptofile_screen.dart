@@ -1,4 +1,5 @@
 import 'package:dutydash/presentation/screens/bottomnavbar_screen.dart';
+import 'package:dutydash/presentation/widgets/userbanner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,6 +24,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              UserBannerScreen(),
               const Text(
                 'Update Profile',
                 style: TextStyle(
