@@ -14,15 +14,15 @@ class UserBannerScreen extends StatelessWidget {
         tileColor: Colors.grey,
         leading: GestureDetector(
           onTap: () {
-            Get.to(UpdateProfileScreen());
+            Get.to(const UpdateProfileScreen());
           },
-          child: CircleAvatar(
+          child: const CircleAvatar(
             backgroundColor: Colors.white,
             backgroundImage: AssetImage(AssetUtility.profileJPG),
           ),
         ),
-        title: Text('Rokeya Yasmin'),
-        subtitle: Text('rokeya123@gmail.com'),
+        title: const Text('Rokeya Yasmin'),
+        subtitle: const Text('rokeya123@gmail.com'),
       ),
     );
   }
