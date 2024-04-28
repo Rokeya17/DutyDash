@@ -10,6 +10,13 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _passwordVisibility = false;
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  final TextEditingController _emailTEController = TextEditingController();
+  final TextEditingController _firstnameTEController = TextEditingController();
+  final TextEditingController _lastnameTEController = TextEditingController();
+  final TextEditingController _phonenumberTEController =
+      TextEditingController();
+  final TextEditingController _passwordTEController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,115 +33,154 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Join With Us",
-                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 30),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        label: const Text(
-                          'Email',
-                          style: TextStyle(fontSize: 16),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        label: const Text(
-                          'First Name',
-                          style: TextStyle(fontSize: 16),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        label: const Text(
-                          'Last Name',
-                          style: TextStyle(fontSize: 16),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        label: const Text(
-                          'Phone Number',
-                          style: TextStyle(fontSize: 16),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    obscureText: !_passwordVisibility,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.blue),
-                        ),
-                        labelText: 'Password',
-                        suffixIcon: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                _passwordVisibility = !_passwordVisibility;
-                              });
-                            },
-                            icon: _passwordVisibility
-                                ? const Icon(Icons.visibility)
-                                : const Icon(Icons.visibility_off))),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    height: 30,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const BottomNavBarBaseScreen()),
-                            (route) => false);
-                      },
-                      child: const Icon(Icons.arrow_circle_right_outlined),
+              child: Form(
+                key: formkey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Join With Us",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w800, fontSize: 30),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Have an account?"),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('Sign In'),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _emailTEController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          label: const Text(
+                            'Email',
+                            style: TextStyle(fontSize: 16),
+                          )),
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Enter your email';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _firstnameTEController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          label: const Text(
+                            'First Name',
+                            style: TextStyle(fontSize: 16),
+                          )),
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return ' Enter your first name';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _lastnameTEController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          label: const Text(
+                            'Last Name',
+                            style: TextStyle(fontSize: 16),
+                          )),
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Enter your last name';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _phonenumberTEController,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          label: const Text(
+                            'Phone Number',
+                            style: TextStyle(fontSize: 16),
+                          )),
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true && value!.length == 11) {
+                          return 'Enter your phone number';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _passwordTEController,
+                      obscureText: !_passwordVisibility,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: const BorderSide(color: Colors.blue),
+                          ),
+                          labelText: 'Password',
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _passwordVisibility = !_passwordVisibility;
+                                });
+                              },
+                              icon: _passwordVisibility
+                                  ? const Icon(Icons.visibility)
+                                  : const Icon(Icons.visibility_off))),
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true && value!.length == 8) {
+                          return 'Enter your password';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    SizedBox(
+                      height: 30,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const BottomNavBarBaseScreen()),
+                              (route) => false);
+                        },
+                        child: const Icon(Icons.arrow_circle_right_outlined),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Have an account?"),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text('Sign In'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
