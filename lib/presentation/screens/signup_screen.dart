@@ -1,5 +1,6 @@
-import 'package:dutydash/presentation/screens/bottomnavbar_screen.dart';
+import 'package:dutydash/data/service/network_caller.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -10,13 +11,19 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _passwordVisibility = false;
-  GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _firstnameTEController = TextEditingController();
   final TextEditingController _lastnameTEController = TextEditingController();
   final TextEditingController _phonenumberTEController =
       TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
+
+  Future<void> userSignup() async {
+    final response  = await Networkcaller().postRequest('',<String,dynamic>{
+      ''
+    })
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(24),
             child: SafeArea(
               child: Form(
-                key: formkey,
+                key: _formkey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             style: TextStyle(fontSize: 16),
                           )),
                       validator: (String? value) {
-                        if (value?.isEmpty ?? true && value!.length == 11) {
+                        if ((value?.isEmpty ?? true) || value!.length <= 11) {
                           return 'Enter your phone number';
                         }
                         return null;
@@ -142,7 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   ? const Icon(Icons.visibility)
                                   : const Icon(Icons.visibility_off))),
                       validator: (String? value) {
-                        if (value?.isEmpty ?? true && value!.length == 8) {
+                        if ((value?.isEmpty ?? true) || value!.length <= 8) {
                           return 'Enter your password';
                         }
                         return null;
@@ -156,12 +163,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const BottomNavBarBaseScreen()),
-                              (route) => false);
+                          if (!_formkey.currentState!.validate()) {
+                            return;
+                          }
                         },
                         child: const Icon(Icons.arrow_circle_right_outlined),
                       ),
