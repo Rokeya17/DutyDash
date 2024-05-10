@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:dutydash/data/models/auth_controller.dart';
 import 'package:dutydash/presentation/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
