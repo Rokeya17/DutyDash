@@ -1,6 +1,5 @@
 import 'package:dutydash/data/service/network_caller.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -20,9 +19,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordTEController = TextEditingController();
 
   Future<void> userSignup() async {
-    final response  = await Networkcaller().postRequest('',<String,dynamic>{
-      ''
-    })
+    final response =
+        await NetworkCaller().postRequest('', <String, dynamic>{''});
   }
 
   @override
