@@ -2,7 +2,7 @@ import 'package:dutydash/data/service/network_caller.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -19,8 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordTEController = TextEditingController();
 
   Future<void> userSignup() async {
-    final response =
-        await NetworkCaller().postRequest('', <String, dynamic>{''});
+    final response = await NetworkCaller().postRequest('', <String, dynamic>{});
   }
 
   @override
@@ -161,8 +160,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (!_formkey.currentState!.validate()) {
-                            return;
+                          if (_formkey.currentState!.validate()) {
+                            userSignup(); // Call your signup method here
                           }
                         },
                         child: const Icon(Icons.arrow_circle_right_outlined),
@@ -176,7 +175,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       children: [
                         const Text("Have an account?"),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigate to sign-in screen
+                          },
                           child: const Text('Sign In'),
                         ),
                       ],
